@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { ReactComponent as PersonIcon } from "../assets/icons/person.svg"; // Импортируем иконку Person
+import { ReactComponent as SearchIcon } from "../assets/icons/search.svg"; // Импортируем иконку Search
+import { ReactComponent as ShoppingBagIcon } from "../assets/icons/shopping-bag.svg"; // Импортируем иконку Shopping Bag
 
 function adjustNavLinks() {
   console.log("✅ Navigation script executed!");
@@ -30,6 +33,20 @@ function Navigation() {
 
   return (
     <div className="text-nav-wrapper">
+      {/* Иконки в верхней части хедера */}
+      <div className="icons">
+        <a href="#person" className="icon">
+          <PersonIcon className="person-icon" />
+        </a>
+        <a href="#search" className="icon">
+          <SearchIcon className="search-icon" />
+        </a>
+        <a href="#cart" className="icon">
+          <ShoppingBagIcon className="shopping-bag-icon" />
+        </a>
+      </div>
+
+      {/* Навигация */}
       <div className="navigation">
         <ul className="nav-list">
           <li><a href="#shop" className="nav-link">Shop</a></li>
@@ -39,6 +56,7 @@ function Navigation() {
           <li><a href="#contacts" className="nav-link">Contacts</a></li>
         </ul>
       </div>
+
       <div className="header-text">
         <h1 className="site-title">Mochi</h1>
         <p className="tagline">Japanese Desserts</p>

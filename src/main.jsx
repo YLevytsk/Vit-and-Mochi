@@ -1,13 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import App from './components/App'; 
-import Header from './components/Header'; // Импортируем новый компонент Header
+import App from './components/App';
+import Navigation from './components/Navigation'; // Импортируем компонент Navigation
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header /> {/* Рендерим Header, который включает Navigation и Icons */}
-    <App /> {/* Основной компонент приложения */}
+    <Navigation /> {/* Добавляем компонент Navigation */}
+    <App /> {/* Оставляем App, если нужен */}
   </StrictMode>
 );
-
