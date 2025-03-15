@@ -36,26 +36,26 @@ img {
 main {
   flex-grow: 1;
 }
-
+:root {
+  --font-family: "Poppins", sans-serif;
+  --second-family: "Josefin Sans", sans-serif;
+  --third-family: "Josefin Slab", sans-serif;
+  
+}
+body {
+  font-family: var(--font-family);
+}
 @media screen and (min-width: 1440px) {
   .header {
     width: 100%;
     height: 770px;
-    /* Устанавливаем высоту хедера */
     background-image: url('./assets/images/mochi.webp');
-    /* Укажите путь к вашему изображению */
-    /* Фоновое изображение растягивается по размеру контейнера */
     background-position: center;
-    /* Центрируем фоновое изображение */
     background-repeat: no-repeat;
     display: flex;
-    /* Используем flexbox для расположения элементов */
     justify-content: center;
-    /* Центрируем содержимое по горизонтали */
     align-items: center;
     background-size: cover;
-    /* Центрируем содержимое по вертикали */
-
   }
 }
 
@@ -66,8 +66,8 @@ screen and (min-resolution: 2dppx) {
     background-image: linear-gradient(to bottom,
         rgba(17, 17, 17, 0.4),
         rgba(17, 17, 17, 0.4)),
-      url(../images/mochi.webp);
-    /* Фон для экранов с высокой плотностью пикселей */
+      url(./assets/mochi.webp);
+   
   }
 }
 
