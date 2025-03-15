@@ -191,3 +191,29 @@
     background-color: #E86868;
     
 }
+/* Контейнер для иконок */
+.icons {
+    display: flex;
+    gap: 38px; 
+    margin-top: 38px; 
+    position: absolute;
+    right: 103px; 
+  }
+  
+  /* Общие стили для каждой иконки */
+  .icon {
+    display: inline-block;
+    width: 24px;  
+    height: 24px; 
+  }
+  
+  /* Применяем цвет для иконок */
+  .person, .search, .shopping-bag {
+    fill: #1A141F; 
+  }
+  
+  /* Стили для иконок при наведении */
+  .icon:hover {
+    fill: #E86868; 
+  }
+  
