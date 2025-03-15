@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 function adjustNavLinks() {
-  console.log("✅ Navigation script executed!"); // ✅ Проверяем, выполняется ли код
+  console.log("✅ Navigation script executed!");
 
   const navLinks = document.querySelectorAll(".nav-link");
   if (navLinks.length === 0) return;
@@ -23,13 +23,30 @@ function adjustNavLinks() {
   }
 }
 
-// Подключаем обработчик при монтировании компонента
 function Navigation() {
   useEffect(() => {
-    adjustNavLinks(); // ✅ Код теперь выполняется при загрузке
+    adjustNavLinks();
   }, []);
 
-  return <div>✅ Navigation Loaded</div>; // ✅ Теперь React-компонент видимый!
+  return (
+    <div className="text-nav-wrapper">
+      <div className="navigation">
+        <ul className="nav-list">
+          <li><a href="#shop" className="nav-link">Shop</a></li>
+          <li><a href="#reviews" className="nav-link">Reviews</a></li>
+          <li><a href="#about" className="nav-link">About Mochi</a></li>
+          <li><a href="#partnership" className="nav-link">Partnership</a></li>
+          <li><a href="#contacts" className="nav-link">Contacts</a></li>
+        </ul>
+      </div>
+      <div className="header-text">
+        <h1 className="site-title">Mochi</h1>
+        <p className="tagline">Japanese Desserts</p>
+        <button className="order-btn" id="order-btn">Order Now</button>
+      </div>
+    </div>
+  );
 }
 
 export default Navigation;
+
