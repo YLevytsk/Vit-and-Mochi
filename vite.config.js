@@ -4,6 +4,7 @@ import svgr from "vite-plugin-svgr"; // Импортируем плагин дл
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/Vit-and-Mochi/", // Добавляем имя репозитория для GitHub Pages
   plugins: [
     react(),
     svgr() // Добавляем плагин svgr
@@ -12,4 +13,3 @@ export default defineConfig({
     sourcemap: true,
   }
 });
-
