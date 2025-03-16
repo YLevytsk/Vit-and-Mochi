@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { ReactComponent as PersonIcon } from "../assets/icons/person.svg"; // Импортируем иконку Person
-import { ReactComponent as SearchIcon } from "../assets/icons/search.svg"; // Импортируем иконку Search
-import { ReactComponent as ShoppingBagIcon } from "../assets/icons/shopping-bag.svg"; // Импортируем иконку Shopping Bag
+import PersonIcon from "../assets/icons/person.svg"; // Иконка "person"
+import SearchIcon from "../assets/icons/search.svg"; // Иконка "search"
+import ShoppingBagIcon from "../assets/icons/shopping-bag.svg"; // Иконка "shopping-bag"
 
 function adjustNavLinks() {
   console.log("✅ Navigation script executed!");
@@ -32,39 +32,42 @@ function Navigation() {
   }, []);
 
   return (
-    <div className="text-nav-wrapper">
+    <header>
       {/* Иконки в верхней части хедера */}
-      <div className="icons">
-        <a href="#person" className="icon">
-          <PersonIcon className="person-icon" />
+      <div className="icons" id="icons">
+        <a href="#search" className="icon search" id="search-icon">
+          <img src={SearchIcon} alt="Search Icon" />
         </a>
-        <a href="#search" className="icon">
-          <SearchIcon className="search-icon" />
+        <a href="#account" className="icon account" id="account-icon">
+          <img src={PersonIcon} alt="Person Icon" />
         </a>
-        <a href="#cart" className="icon">
-          <ShoppingBagIcon className="shopping-bag-icon" />
+        <a href="#cart" className="icon cart" id="cart-icon">
+          <img src={ShoppingBagIcon} alt="Shopping Bag Icon" />
         </a>
       </div>
 
-      {/* Навигация */}
-      <div className="navigation">
-        <ul className="nav-list">
-          <li><a href="#shop" className="nav-link">Shop</a></li>
-          <li><a href="#reviews" className="nav-link">Reviews</a></li>
-          <li><a href="#about" className="nav-link">About Mochi</a></li>
-          <li><a href="#partnership" className="nav-link">Partnership</a></li>
-          <li><a href="#contacts" className="nav-link">Contacts</a></li>
-        </ul>
-      </div>
+      <div className="text-nav-wrapper">
+        {/* Навигация */}
+        <div className="navigation">
+          <ul className="nav-list">
+            <li><a href="#shop" className="nav-link">Shop</a></li>
+            <li><a href="#reviews" className="nav-link">Reviews</a></li>
+            <li><a href="#about" className="nav-link">About Mochi</a></li>
+            <li><a href="#partnership" className="nav-link">Partnership</a></li>
+            <li><a href="#contacts" className="nav-link">Contacts</a></li>
+          </ul>
+        </div>
 
-      <div className="header-text">
-        <h1 className="site-title">Mochi</h1>
-        <p className="tagline">Japanese Desserts</p>
-        <button className="order-btn" id="order-btn">Order Now</button>
+        <div className="header-text">
+          <h1 className="site-title">Mochi</h1>
+          <p className="tagline">Japanese Desserts</p>
+          <button className="order-btn" id="order-btn">Order Now</button>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
 
 export default Navigation;
+
 
