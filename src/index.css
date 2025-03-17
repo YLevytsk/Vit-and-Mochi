@@ -12,7 +12,8 @@ p:last-child {
   margin-bottom: 0;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -30,21 +31,24 @@ button {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 main {
   flex-grow: 1;
 }
+
 :root {
   --font-family: "Poppins", sans-serif;
   --second-family: "Josefin Sans", sans-serif;
   --third-family: "Josefin Slab", sans-serif;
-  
+
 }
+
 body {
   font-family: var(--font-family);
 }
+
 @media screen and (min-width: 1440px) {
   .header {
     width: 100%;
@@ -67,7 +71,7 @@ screen and (min-resolution: 2dppx) {
         rgba(17, 17, 17, 0.4),
         rgba(17, 17, 17, 0.4)),
       url(./assets/mochi.webp);
-   
+
   }
 }
 

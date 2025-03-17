@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { AiFillInstagram, AiFillTwitterSquare, AiOutlineWhatsApp } from "react-icons/ai";
 import PersonIcon from "../assets/icons/person.svg"; // Иконка "person"
 import SearchIcon from "../assets/icons/search.svg"; // Иконка "search"
 import ShoppingBagIcon from "../assets/icons/shopping-bag.svg"; // Иконка "shopping-bag"
@@ -33,6 +34,19 @@ function Navigation() {
 
   return (
     <header>
+      {/* Иконки соцсетей (перед остальными иконками) */}
+      <div className="social-icons">
+        <a href="https://www.instagram.com/" className="social-link">
+          <AiFillInstagram />
+        </a>
+        <a href="https://twitter.com/" className="social-link">
+          <AiFillTwitterSquare />
+        </a>
+        <a href="https://wa.me/" className="social-link">
+          <AiOutlineWhatsApp />
+        </a>
+      </div>
+
       {/* Иконки в верхней части хедера */}
       <div className="icons" id="icons">
         <a href="#search" className="icon search" id="search-icon">
@@ -69,5 +83,6 @@ function Navigation() {
 }
 
 export default Navigation;
+
 
 
