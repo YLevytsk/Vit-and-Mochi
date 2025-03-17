@@ -1,12 +1,13 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './components/App';
-import Navigation from './components/Navigation'; // Импортируем компонент Navigation
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "modern-normalize";
+import "./index.css";
+import App from "./components/App.jsx";
+import Navigation from "./components/Navigation"; // Импорт Navigation
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <Navigation /> {/* Добавляем компонент Navigation */}
-    <App /> {/* Оставляем App, если нужен */}
-  </StrictMode>
+    <App />
+  </React.StrictMode>
 );
