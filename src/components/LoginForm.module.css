@@ -1,0 +1,53 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.form-input {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.submit-button {
+    padding: 10px 16px;
+    font-size: 16px;
+    background-color: #e86868;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #d15353;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.switch-link {
+    color: #e86868;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+}

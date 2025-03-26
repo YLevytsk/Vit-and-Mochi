@@ -5,7 +5,7 @@
     width: 153px;
     height: 119px;
     top: 24px;
-    left: 105px; 
+    left: 105px;
 }
 
 .header {
@@ -13,31 +13,34 @@
     justify-content: space-between;
     align-items: center;
     align-items: flex-start;
+    z-index: 0;
 }
+
 @media screen and (min-width: 1440px) {
     .header {
-      width: 100%;
-      height: 770px;
-      background-image: url('./assets/images/mochi.webp');
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-size: cover;
+        width: 100%;
+        height: 770px;
+        background-image: url('./assets/images/mochi.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
     }
-  }
-  @media screen and (min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
     .hero-content {
-      background-image: linear-gradient(to bottom,
-          rgba(17, 17, 17, 0.4),
-          rgba(17, 17, 17, 0.4)),
-        url(./assets/images//mochi.webp);
+        background-image: linear-gradient(to bottom,
+                rgba(17, 17, 17, 0.4),
+                rgba(17, 17, 17, 0.4)),
+            url(./assets/images//mochi.webp);
     }
-  }
-   
+}
+
 .soc_nets_link {
     display: flex;
     position: relative;
@@ -159,21 +162,21 @@
 .nav-link:hover::before {
     opacity: 1;
     transform: scaleX(1);
-    
+
 }
 
 .header-text {
     margin-right: 116px;
- 
+
 }
 
 .order-btn {
     font-family: var(--second-family);
-    border: 1px solid #932b82;
+    border: 1px solid #E86868;
     padding: 9px 36px;
     width: 141px;
     height: 38px;
-    
+
     font-weight: 600;
     font-size: 16px;
     line-height: 125%;
@@ -189,31 +192,62 @@
 .order-btn:hover,
 .order-btn:focus {
     background-color: #E86868;
-    
+
 }
-/* Контейнер для иконок */
+
+/* Контейнер для всех иконок */
 .icons {
     display: flex;
-    gap: 38px; 
-    margin-top: 38px; 
+    align-items: center;
+    gap: 64px;
+    margin-top: 38px;
     position: absolute;
-    right: 103px; 
-  }
-  
-  /* Общие стили для каждой иконки */
-  .icon {
-    display: inline-block;
-    width: 24px;  
-    height: 24px; 
-  }
-  
-  /* Применяем цвет для иконок */
-  .person, .search, .shopping-bag {
-    fill: #1A141F; 
-  }
-  
-  /* Стили для иконок при наведении */
-  .icon:hover {
-    fill: #E86868; 
-  }
-  
+    right: 103px;
+
+}
+
+/* Социальные иконки */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin-right: 148px;
+
+}
+
+/* Общие стили для всех иконок */
+.icon,
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}
+
+/* Устанавливаем цвет для иконок React Icons */
+.social-icons a svg {
+    width: 24px;
+    height: 24px;
+    color: #1A141F;
+    transition: color 0.3s ease;
+}
+
+/* Меняем цвет соцсетей при наведении */
+.social-icons a:hover svg,
+.social-icons a:focus svg {
+    color: #E86868;
+}
+
+/* Основные иконки (поиск, аккаунт, корзина) */
+.icon img {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+}
+
+/* Меняем цвет основных иконок при наведении */
+.icon:hover img,
+.icon:focus img {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(80%) saturate(400%) hue-rotate(320deg);
+}
