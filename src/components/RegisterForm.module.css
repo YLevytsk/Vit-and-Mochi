@@ -51,3 +51,18 @@
     margin-top: -8px;
     margin-bottom: 8px;
 }
+
+.register-success {
+    text-align: center;
+    padding: 24px;
+}
+
+.register-success h2 {
+    color: #5a9c59;
+    margin-bottom: 12px;
+}
+
+.register-success p {
+    margin-bottom: 16px;
+    font-size: 15px;
+}

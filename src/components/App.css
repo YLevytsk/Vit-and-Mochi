@@ -115,14 +115,14 @@ screen and (min-resolution: 2dppx) {
     text-transform: uppercase;
     color: #3e3434;
     width: 295px;
-    /* Ширина элемента меню */
+   
     height: 60px;
-    /* Высота элемента меню */
+   
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
-    /* Центрируем текст по вертикали */
+    
     justify-content: left;
     padding-left: 16px;
     white-space: nowrap;
@@ -131,31 +131,31 @@ screen and (min-resolution: 2dppx) {
 
 .nav-list {
     display: flex;
-    /* Используем флексбокс для расположения элементов в строку */
+    
     flex-direction: column;
-    /* Элементы списка будут выстраиваться в колонку */
+   
     gap: 34px;
-    /* Устанавливаем отступ между элементами списка */
+   
     padding: 0;
     margin: 0;
 }
 
 .nav-link::before {
     content: '';
-    /* Псевдо-элемент без текста */
+    
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    /* Ширина фона равна ширине родительского элемента */
+    
     height: 100%;
-    /* Высота фона равна высоте родительского элемента */
+   
     background-color: #E86868;
-    /* Цвет фона при ховере */
+    
     opacity: 0;
-    /* Изначально фон скрыт */
+    
     transition: opacity 0.7s ease, transform 0.7s ease;
-    /* Плавное изменение прозрачности */
+   
     z-index: -1;
 }
 
@@ -172,7 +172,7 @@ screen and (min-resolution: 2dppx) {
 
 .order-btn {
     font-family: var(--second-family);
-    border: 1px solid #E86868;
+    border: 2px solid #E86868;
     padding: 9px 36px;
     width: 141px;
     height: 38px;

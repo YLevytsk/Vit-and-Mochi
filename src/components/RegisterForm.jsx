@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./RegisterForm.module.css";
 
-// Схема валидации через Yup
+// Схема валидации с помощью Yup
 const RegisterSchema = Yup.object().shape({
   username: Yup.string().required("Username is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -15,25 +15,35 @@ const RegisterSchema = Yup.object().shape({
     .required("Please confirm your password"),
 });
 
-const RegisterForm = ({ onSwitchMode }) => {
-  const handleSubmit = (values, actions) => {
-    console.log("Registration submitted:", values);
+const RegisterForm = ({ onSwitchMode, onLogin }) => {
+  const [success, setSuccess] = useState(false);
 
-    // Удаляем confirmPassword перед сохранением
+  const handleSubmit = (values, actions) => {
     const { confirmPassword, ...userData } = values;
 
-    // Получаем список пользователей
+    // Сохраняем в общий список пользователей
     const users = JSON.parse(localStorage.getItem("users")) || [];
-
-    // Добавляем нового
     users.push(userData);
-
-    // Сохраняем обратно
     localStorage.setItem("users", JSON.stringify(users));
 
-    // Очищаем форму
+    // Сохраняем текущего пользователя (автоматический вход)
+    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("accessToken", "mock-access-token");
+
+    onLogin(userData, "mock-access-token"); // 👈 Вызов входа
+
     actions.resetForm();
+    setSuccess(true);
   };
+
+  if (success) {
+    return (
+      <div className={styles["register-success"]}>
+        <h2>🎉 Registration Successful!</h2>
+        <p>You are now logged in.</p>
+      </div>
+    );
+  }
 
   return (
     <Formik
@@ -47,7 +57,7 @@ const RegisterForm = ({ onSwitchMode }) => {
       onSubmit={handleSubmit}
     >
       {() => (
-        <Form className={styles["register-form"]}>
+        <Form className={styles["register-form"]} autoComplete="on" method="post">
           <h2 className={styles["form-title"]}>Create Account</h2>
 
           <Field
@@ -55,6 +65,7 @@ const RegisterForm = ({ onSwitchMode }) => {
             name="username"
             placeholder="Username"
             className={styles["form-input"]}
+            autoComplete="username"
           />
           <ErrorMessage name="username" component="div" className={styles["error"]} />
 
@@ -63,6 +74,7 @@ const RegisterForm = ({ onSwitchMode }) => {
             name="email"
             placeholder="Email"
             className={styles["form-input"]}
+            autoComplete="email"
           />
           <ErrorMessage name="email" component="div" className={styles["error"]} />
 
@@ -71,6 +83,7 @@ const RegisterForm = ({ onSwitchMode }) => {
             name="password"
             placeholder="Password"
             className={styles["form-input"]}
+            autoComplete="new-password"
           />
           <ErrorMessage name="password" component="div" className={styles["error"]} />
 
@@ -79,6 +92,7 @@ const RegisterForm = ({ onSwitchMode }) => {
             name="confirmPassword"
             placeholder="Confirm Password"
             className={styles["form-input"]}
+            autoComplete="new-password"
           />
           <ErrorMessage name="confirmPassword" component="div" className={styles["error"]} />
 
@@ -99,6 +113,10 @@ const RegisterForm = ({ onSwitchMode }) => {
 };
 
 export default RegisterForm;
+
+
+
+
 
 
 
